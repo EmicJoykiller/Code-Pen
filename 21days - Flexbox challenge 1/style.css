@@ -37,24 +37,43 @@ h1 {
     width: 80%;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 50px;
+    
 }
+
 
 .row {
     /* display: flex => flex container */
     display: flex;
-
-    /* can't use yet */
-    /* gap: 100px; */
+    justify-content: space-evenly;
+    gap: 20px; 
+    padding: 3rem 0;
 }
 
 .col {
     /* these are now flex items */
     width: 100%;
+    text-align: center;
+    
+    
+    
+    
 }
+
+.text_title{
+    color: #87629A;
+}
+
+
 
 .hero {
     padding: 100px 0;
     background-color: #23424A;
+    color: #FFF;
+}
+
+.hero2{
+    background-color: #136C72;
     color: #FFF;
 }
 
