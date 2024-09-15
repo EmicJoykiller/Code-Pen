@@ -89,3 +89,24 @@ h1 {
 .btn:focus {
     opacity: .75; 
 }
+
+aside{
+    background-color:#136C72;
+    text-align: center;
+    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap:2rem     ;
+    color: #FFF;
+}
+
+.s{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+section > h1{
+    color: #136C72;
+}
+
