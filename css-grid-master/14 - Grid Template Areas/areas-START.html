@@ -54,7 +54,8 @@
 
     @media (max-width:700px){
       .container{
-        grid-template-columns: (auto-fit,1fr);
+        grid-template-columns: repeat(auto-fit,1fr);
+        grid-template-rows: repeat(auto-fit,2fr);
         grid-template-areas: 
         "content content"
         "sidebar-1 sidebar-1"
