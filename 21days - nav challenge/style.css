@@ -86,8 +86,25 @@ header {
 .nav__link{
     text-decoration: none;
     color: white;
+    text-transform: uppercase;
 }
 
+
+.nav__link--button{
+    padding: .25em .75em;
+    background: #fff;
+    color: #23424A;
+    border-radius: 100px;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    opacity: .65;
+}
+
+.nav__list--primary{
+    margin-bottom:2em ;
+}
 
 
 .nav-toggle {
@@ -200,13 +217,25 @@ header {
     .nav {
         visibility: visible;
         display: flex;
+        align-items: center;
         height: auto;
+        position: relative;
+        justify-content: flex-end;
     }
 
     .row {
         display: flex;
         justify-content: space-between;
 
+    }
+
+    .nav__list{
+        display: flex;
+        margin: 0;
+    }
+
+    .nav__item{
+        margin: 0 0 0 1.5em;
     }
 
     .hero__text {
