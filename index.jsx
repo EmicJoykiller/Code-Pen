@@ -1,9 +1,33 @@
-const JSX = (
-    <div>
-      <h1>Hello World</h1>
-      <p>Lets render this to the DOM</p>
-    </div>
-  );
-  // Add your code below this line
+class Fruits extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        <div>
+          <h2>Fruits:</h2>
+          { /* Change code below this line */ }
+          <NonCitrus />
+          <Citrus />
+          { /* Change code above this line */ }
+        </div>
+      );
+    }
+  };
   
-  ReactDOM.render(JSX,document.getElementById('challenge-node'));
+  class TypesOfFood extends React.Component {
+    constructor(props) {
+       super(props);
+    }
+    render() {
+      return (
+        <div>
+          <h1>Types of Food:</h1>
+          { /* Change code below this line */ }
+          <Fruits />
+          { /* Change code above this line */ }
+          <Vegetables />
+        </div>
+      );
+    }
+  };
