@@ -2,8 +2,8 @@ const character = "#";
 const count = 8;
 const rows = [];
 
-function padRow() {
-
+function padRow(rowNumber, rowCount) {
+  return character.repeat(rowNumber)
 }
 
 
