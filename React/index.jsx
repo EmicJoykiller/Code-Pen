@@ -1,23 +1,40 @@
-class MyComponent extends React.Component {
+class OnlyEvens extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('Should I update?');
+    // Change code below this line
+    if (nextProps.value % 2 == 0)
+    return true;
+    // Change code above this line
+  }
+  componentDidUpdate() {
+    console.log('Component re-rendered.');
+  }
+  render() {
+    return <h1>{this.props.value}</h1>;
+  }
+}
+
+class Controller extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeUsers: null
+      value: 0
     };
+    this.addValue = this.addValue.bind(this);
   }
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        activeUsers: 1273
-      });
-    }, 2500);
+  addValue() {
+    this.setState(state => ({
+      value: state.value + 1
+    }));
   }
   render() {
     return (
       <div>
-        {/* Change code below this line */}
-        <h1>Active Users: </h1>
-        {/* Change code above this line */}
+        <button onClick={this.addValue}>Add</button>
+        <OnlyEvens value={this.state.value} />
       </div>
     );
   }
