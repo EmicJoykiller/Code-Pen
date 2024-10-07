@@ -1,33 +1,18 @@
-class Fruits extends React.Component {
-    constructor(props) {
-      super(props);
+class MyComponent extends React.Component{
+    constructor(props){
+        super(props);
     }
-    render() {
-      return (
-        <div>
-          <h2>Fruits:</h2>
-          { /* Change code below this line */ }
-          <NonCitrus />
-          <Citrus />
-          { /* Change code above this line */ }
-        </div>
-      );
+
+
+    render(){
+        return(
+            <div>
+                <h1>My First React Component!</h1>
+
+            </div>
+        )
     }
-  };
-  
-  class TypesOfFood extends React.Component {
-    constructor(props) {
-       super(props);
-    }
-    render() {
-      return (
-        <div>
-          <h1>Types of Food:</h1>
-          { /* Change code below this line */ }
-          <Fruits />
-          { /* Change code above this line */ }
-          <Vegetables />
-        </div>
-      );
-    }
-  };
+}
+
+
+ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'))
