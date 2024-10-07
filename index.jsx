@@ -1,31 +1,21 @@
-class App extends React.Component {
+class MyComponent extends React.Component {
     constructor(props) {
       super(props);
-  
+      this.state = {
+        name: 'freeCodeCamp'
+      }
     }
     render() {
+      // Change code below this line
+        const name = this.state.name;
+
+      // Change code above this line
       return (
-          <div>
-              { /* Change code below this line */ }
-              <Welcome />
-              { /* Change code above this line */ }
-          </div>
-      );
-    }
-  };
-  
-  class Welcome extends React.Component {
-    constructor(props) {
-      super(props);
-  
-    }
-    render() {
-      return (
-          <div>
-            { /* Change code below this line */ }
-            <p>Hello, <strong></strong>!</p>
-            { /* Change code above this line */ }
-          </div>
+        <div>
+          { /* Change code below this line */ }
+            <h1>{name}</h1>
+          { /* Change code above this line */ }
+        </div>
       );
     }
   };
