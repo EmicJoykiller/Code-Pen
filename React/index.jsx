@@ -1,12 +1,13 @@
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return <div/>
-  }
-};
+function MyButton(){
+  return(
+    <button>HI</button>
+  )
+}
 
-// Change code below this line
-
-ReactDOMServer.renderToString(<App />)
+export default function MyApp(){
+  return(
+    <div>
+      <MyButton />
+    </div>
+  )
+}
