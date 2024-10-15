@@ -1,19 +1,15 @@
-class TypesOfFood extends React.Component {
+class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
+    // Only change code below this line
+
+    // Only change code above this line
   }
   render() {
     return (
       <div>
-        <h1>Types of Food:</h1>
-        {/* Change code below this line */}
-        <Fruits />
-        <Vegetables />
-        {/* Change code above this line */}
+        <h1>{this.state.firstName}</h1>
       </div>
     );
   }
 };
-
-// Change code below this line
-ReactDOM.render(<TypesOfFood/>, document.getElementById('challenge-node'))
