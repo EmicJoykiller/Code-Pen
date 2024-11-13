@@ -6,7 +6,7 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
-const button1 = document.querySelector('#button1');
+const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
@@ -21,14 +21,18 @@ const locations = [
     name: "town square",
     "button text": ["Go to store", "Go to cave", "Fight dragon"],
     "button functions": [goStore, goCave, fightDragon],
-    text: "You are in the town square. You see a sign that says \"Store\"."
+    text: 'You are in the town square. You see a sign that says "Store".',
   },
   {
     name: "store",
-    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+    "button text": [
+      "Buy 10 health (10 gold)",
+      "Buy weapon (30 gold)",
+      "Go to town square",
+    ],
     "button functions": [buyHealth, buyWeapon, goTown],
-    text: "You enter the store."
-  }
+    text: "You enter the store.",
+  },
 ];
 
 // initialize buttons
@@ -43,7 +47,7 @@ function update(location) {
   button1.onclick = location["button functions"][0];
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
-  text.innerText = "You are in the town square. You see a sign that says \"Store\".";
+  text.innerText = location.text;
 }
 
 function goTown() {
@@ -51,7 +55,7 @@ function goTown() {
 }
 
 function goStore() {
-
+  update(locations[1]);
 }
 
 function goCave() {
@@ -62,10 +66,12 @@ function fightDragon() {
   console.log("Fighting dragon.");
 }
 
-function buyHealth() {
+function buyHealth() {}
+
+function buyWeapon() {}
+
+function fightSlime(){
 
 }
 
-function buyWeapon() {
-
-}
+function fightBeast(){}
