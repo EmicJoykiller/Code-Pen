@@ -85,3 +85,7 @@
   .deficit {
     color: var(--light-green);
   }
+
+  #breakfats .input-container{
+    display: block;
+  }
