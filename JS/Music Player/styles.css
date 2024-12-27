@@ -1,11 +1,12 @@
 :root {
     /* colors */
-    --primary-color: #dfdfe2;
-    --secondary-color: #ffffff;
-    --app-background-color: #4d4d62;
-    --background-color: #1b1b32;
-    --foreground-color: #3b3b4f;
-    --highlight-color: #f1be32;
+    --primary-color: #4CAF50; /* Green - Clean and modern */
+--secondary-color: #E3F2FD; /* Light Blue - Fresh and airy */
+--app-background-color: #2196F3; /* Vibrant Blue - Engaging and energetic */
+--background-color: #1E3A5F; /* Deep Navy Blue - Professional and calming */
+--foreground-color: #111; /* Pale Green - Easy on the eyes */
+--highlight-color: #00C853; /* Bright Green - Stands out for accents */
+
   
     /* font sizes */
     --root-font-size: 16px;
