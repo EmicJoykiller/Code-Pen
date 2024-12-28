@@ -106,6 +106,8 @@ renderSongs(sortSongs());
 
 const playSong = (id)=>{
     const song = userData?.songs.find((song)=>id === song.id)
+    audio.src = song.src;
+    audio.title = song.title;
 };
 
 const sortSongs = ()=> {
