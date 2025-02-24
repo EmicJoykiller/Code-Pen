@@ -2,16 +2,29 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'freeCodeCamp'
+      visibility: false
+    };
+    // Change code below this line
+
+    // Change code above this line
+  }
+  // Change code below this line
+
+  // Change code above this line
+  render() {
+    if (this.state.visibility) {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+          <h1>Now you see me!</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleVisibility}>Click Me</button>
+        </div>
+      );
     }
   }
-  render() {
-    return (
-      <div>
-        { /* Change code below this line */ }
-        <h1>{this.state.name}</h1>
-        { /* Change code above this line */ }
-      </div>
-    );
-  }
-};
+}
