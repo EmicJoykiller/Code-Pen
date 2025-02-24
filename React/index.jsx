@@ -1,30 +1,10 @@
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visibility: false
-    };
+// Change code above this line
+class Colorful extends React.Component {
+  render() {
     // Change code below this line
-
+    return (
+      <div style={{color: "yellow", fontSize: 24}}>Style Me!</div>
+    );
     // Change code above this line
   }
-  // Change code below this line
-
-  // Change code above this line
-  render() {
-    if (this.state.visibility) {
-      return (
-        <div>
-          <button onClick={this.toggleVisibility}>Click Me</button>
-          <h1>Now you see me!</h1>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <button onClick={this.toggleVisibility}>Click Me</button>
-        </div>
-      );
-    }
-  }
-}
+};
