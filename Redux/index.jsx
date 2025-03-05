@@ -1,35 +1,27 @@
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
+const ADD_NOTE = 'ADD_NOTE';
 
-const counterReducer = (state = 0, action) => {
-  switch(action.type) {
-    case INCREMENT:
-      return state + 1;
-    case DECREMENT:
-      return state - 1;
+const notesReducer = (state = 'Initial State', action) => {
+  switch (action.type) {
+    // Change code below this line
+    case ADD_NOTE:
+      return action.text;
+    // Change code above this line
     default:
       return state;
   }
 };
 
-const LOGIN = 'LOGIN';
-const LOGOUT = 'LOGOUT';
-
-const authReducer = (state = {authenticated: false}, action) => {
-  switch(action.type) {
-    case LOGIN:
-      return {
-        authenticated: true
-      }
-    case LOGOUT:
-      return {
-        authenticated: false
-      }
-    default:
-      return state;
-  }
+const addNoteText = (note) => {
+  // Change code below this line
+  return {
+    type: ADD_NOTE,
+    text: note
+  };
+  // Change code above this line
 };
 
-const rootReducer = // Define the root reducer here
+const store = Redux.createStore(notesReducer);
 
-const store = Redux.createStore(rootReducer);
+console.log(store.getState()); // Output: 'Initial State'
+store.dispatch(addNoteText('Hello!'));
+console.log(store.getState()); // Output: 'Hello!'
