@@ -1,27 +1,7 @@
-const ADD_NOTE = 'ADD_NOTE';
+const reducer = (state = 5) => {
+  return state;
+}
 
-const notesReducer = (state = 'Initial State', action) => {
-  switch (action.type) {
-    // Change code below this line
-    case ADD_NOTE:
-      return action.text;
-    // Change code above this line
-    default:
-      return state;
-  }
-};
-
-const addNoteText = (note) => {
-  // Change code below this line
-  return {
-    type: ADD_NOTE,
-    text: note
-  };
-  // Change code above this line
-};
-
-const store = Redux.createStore(notesReducer);
-
-console.log(store.getState()); // Output: 'Initial State'
-store.dispatch(addNoteText('Hello!'));
-console.log(store.getState()); // Output: 'Hello!'
+// Redux methods are available from a Redux object
+// For example: Redux.createStore()
+// Define the store here:
