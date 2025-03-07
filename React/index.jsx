@@ -1,19 +1,24 @@
-class MyComponent extends React.Component {
+class ControlledInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'freeCodeCamp'
-    }
-  }
-  render() {
+      input: ''
+    };
     // Change code below this line
-    const name = this.state.name
+
     // Change code above this line
+  }
+  // Change code below this line
+
+  // Change code above this line
+  render() {
     return (
       <div>
-        { /* Change code below this line */ }
-        <h1>{name}</h1>
-        { /* Change code above this line */ }
+        { /* Change code below this line */}
+
+        { /* Change code above this line */}
+        <h4>Controlled Input:</h4>
+        <p>{this.state.input}</p>
       </div>
     );
   }
