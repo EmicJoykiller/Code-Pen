@@ -1,24 +1,52 @@
-class ControlledInput extends React.Component {
+class MyApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ''
-    };
-    // Change code below this line
-
-    // Change code above this line
+      inputValue: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
   }
-  // Change code below this line
+  handleChange(event) {
+    this.setState({
+      inputValue: event.target.value
+    });
+  }
+  render() {
+    return (
+       <div>
+        { /* Change code below this line */ }
 
-  // Change code above this line
+        { /* Change code above this line */ }
+       </div>
+    );
+  }
+};
+
+class GetInput extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div>
-        { /* Change code below this line */}
+        <h3>Get Input:</h3>
+        <input
+          value={this.props.input}
+          onChange={this.props.handleChange}/>
+      </div>
+    );
+  }
+};
 
-        { /* Change code above this line */}
-        <h4>Controlled Input:</h4>
-        <p>{this.state.input}</p>
+class RenderInput extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>Input Render:</h3>
+        <p>{this.props.input}</p>
       </div>
     );
   }
