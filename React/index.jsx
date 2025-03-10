@@ -1,26 +1,18 @@
-const INCREMENT = 'INCREMENT'; 
-const DECREMENT = 'DECREMENT'; 
-
-const counterReducer = (state = 0, action)=>{
-  switch(action.type){
-    case INCREMENT:
-      return state + 1;
-    case DECREMENT:
-      return state - 1;
+const immutableReducer = (state = ['Do not mutate state!'], action) => {
+  switch(action.type) {
+    case 'ADD_TO_DO':
+      // Don't mutate state here or the tests will fail
+      return
     default:
       return state;
   }
-}; 
+};
 
-const incAction = ()=>({type : INCREMENT});
+const addToDo = (todo) => {
+  return {
+    type: 'ADD_TO_DO',
+    todo
+  }
+}
 
-const decAction = ()=>({type: DECREMENT});
-
-const store = Redux.createStore(counterReducer);
-console.log(store.getState()); // Output: 0
-store.dispatch(incAction());
-console.log(store.getState()); // Output: 1
-store.dispatch(incAction());
-console.log(store.getState()); // Output: 2
-store.dispatch(decAction());
-console.log(store.getState()); // Output: 1
+const store = Redux.createStore(immutableReducer);
