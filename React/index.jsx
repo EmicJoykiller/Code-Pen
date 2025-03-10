@@ -1,53 +1,24 @@
-class MyApp extends React.Component {
+class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: ''
-    }
-    this.handleChange = this.handleChange.bind(this);
+      activeUsers: null
+    };
   }
-  handleChange(event) {
-    this.setState({
-      inputValue: event.target.value
-    });
-  }
-  render() {
-    return (
-       <div>
-        { /* Change code below this line */ }
-
-        { /* Change code above this line */ }
-       </div>
-    );
-  }
-};
-
-class GetInput extends React.Component {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        activeUsers: 1273
+      });
+    }, 2500);
   }
   render() {
     return (
       <div>
-        <h3>Get Input:</h3>
-        <input
-          value={this.props.input}
-          onChange={this.props.handleChange}/>
+        {/* Change code below this line */}
+        <h1>Active Users: {this.state.activeUsers}</h1>
+        {/* Change code above this line */}
       </div>
     );
   }
-};
-
-class RenderInput extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-        <h3>Input Render:</h3>
-        <p>{this.props.input}</p>
-      </div>
-    );
-  }
-};
+}
