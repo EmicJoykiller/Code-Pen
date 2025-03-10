@@ -1,8 +1,8 @@
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
+const INCREMENT = 'INCREMENT'; 
+const DECREMENT = 'DECREMENT'; 
 
-const counterReducer = (state = 0, action) => {
-  switch(action.type) {
+const counterReducer = (state = 0, action)=>{
+  switch(action.type){
     case INCREMENT:
       return state + 1;
     case DECREMENT:
@@ -10,29 +10,17 @@ const counterReducer = (state = 0, action) => {
     default:
       return state;
   }
-};
+}; 
 
-const LOGIN = 'LOGIN';
-const LOGOUT = 'LOGOUT';
+const incAction = ()=>({type : INCREMENT});
 
-const authReducer = (state = {authenticated: false}, action) => {
-  switch(action.type) {
-    case LOGIN:
-      return {
-        authenticated: true
-      }
-    case LOGOUT:
-      return {
-        authenticated: false
-      }
-    default:
-      return state;
-  }
-};
+const decAction = ()=>({type: DECREMENT});
 
-const rootReducer = Redux.combineReducers({
-  count: counterReducer,
-  auth: authReducer
-})
-
-const store = Redux.createStore(rootReducer);
+const store = Redux.createStore(counterReducer);
+console.log(store.getState()); // Output: 0
+store.dispatch(incAction());
+console.log(store.getState()); // Output: 1
+store.dispatch(incAction());
+console.log(store.getState()); // Output: 2
+store.dispatch(decAction());
+console.log(store.getState()); // Output: 1
