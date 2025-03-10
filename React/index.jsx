@@ -1,35 +1,40 @@
-class MyComponent extends React.Component {
+class Results extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    {/* Change code below this line */}
+    return <h1></h1>;
+    {/* Change code above this line */}
+  }
+}
+
+class GameOfChance extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: ''
+      counter: 1
     };
-    this.handleEnter = this.handleEnter.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
-  // Change code below this line
-  componentDidMount() {
-
-  }
-  componentWillUnmount() {
-
-  }
-  // Change code above this line
-  handleEnter() {
-    this.setState((state) => ({
-      message: state.message + 'You pressed the enter key! '
-    }));
-  }
-  handleKeyPress(event) {
-    if (event.keyCode === 13) {
-      this.handleEnter();
-    }
+  handleClick() {
+    this.setState(prevState => {
+      // Complete the return statement:
+      return {
+        counter: prevState
+      }
+    });
   }
   render() {
+    const expression = null; // Change this line
     return (
       <div>
-        <h1>{this.state.message}</h1>
+        <button onClick={this.handleClick}>Play Again</button>
+        {/* Change code below this line */}
+
+        {/* Change code above this line */}
+        <p>{'Turn: ' + this.state.counter}</p>
       </div>
     );
   }
-};
+}
