@@ -1,45 +1,44 @@
-const textAreaStyles = {
-  width: 235,
-  margin: 5
-};
+const { use } = require("react");
 
-class MyToDoList extends React.Component {
+class MyComponent extends React.Component {
   constructor(props) {
     super(props);
-    // Change code below this line
-    this.state ={
-      userInput: "",
-      toDoList: []
-    }
-    // Change code above this line
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleSubmit() {
-    const itemsArray = this.state.userInput.split(',');
-    this.setState({
-      toDoList: itemsArray
-    });
-  }
-  handleChange(e) {
-    this.setState({
-      userInput: e.target.value
-    });
+    this.state = {
+      users: [
+        {
+          username: 'Jeff',
+          online: true
+        },
+        {
+          username: 'Alan',
+          online: false
+        },
+        {
+          username: 'Mary',
+          online: true
+        },
+        {
+          username: 'Jim',
+          online: false
+        },
+        {
+          username: 'Sara',
+          online: true
+        },
+        {
+          username: 'Laura',
+          online: true
+        }
+      ]
+    };
   }
   render() {
-    const items = this.state.toDoList.map((item, index)=><li key={index}>{item}</li>); // Change this line
+    const usersOnline = this.state.users.filter(user => user.online = true); // Change this line
+    const renderOnline = usersOnline.map((username, index)=><li key={index}>{username}</li>); // Change this line
     return (
       <div>
-        <textarea
-          onChange={this.handleChange}
-          value={this.state.userInput}
-          style={textAreaStyles}
-          placeholder='Separate Items With Commas'
-        />
-        <br />
-        <button onClick={this.handleSubmit}>Create List</button>
-        <h1>My "To Do" List:</h1>
-        <ul>{items}</ul>
+        <h1>Current Online Users:</h1>
+        <ul>{renderOnline}</ul>
       </div>
     );
   }
