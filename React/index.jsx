@@ -1,39 +1,45 @@
-class Results extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    {/* Change code below this line */}
-    return <h1></h1>;
-    {/* Change code above this line */}
-  }
-}
+const textAreaStyles = {
+  width: 235,
+  margin: 5
+};
 
-class GameOfChance extends React.Component {
+class MyToDoList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      counter: 1
-    };
-    this.handleClick = this.handleClick.bind(this);
+    // Change code below this line
+    this.state ={
+      userInput: "",
+      toDoList: []
+    }
+    // Change code above this line
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
-  handleClick() {
-    this.setState(prevState => {
-      // Complete the return statement:
-      return {
-        counter: prevState
-      }
+  handleSubmit() {
+    const itemsArray = this.state.userInput.split(',');
+    this.setState({
+      toDoList: itemsArray
+    });
+  }
+  handleChange(e) {
+    this.setState({
+      userInput: e.target.value
     });
   }
   render() {
-    const expression = null; // Change this line
+    const items = this.state.toDoList.map((item, index)=><li key={index}>{item}</li>); // Change this line
     return (
       <div>
-        <button onClick={this.handleClick}>Play Again</button>
-        {/* Change code below this line */}
-
-        {/* Change code above this line */}
-        <p>{'Turn: ' + this.state.counter}</p>
+        <textarea
+          onChange={this.handleChange}
+          value={this.state.userInput}
+          style={textAreaStyles}
+          placeholder='Separate Items With Commas'
+        />
+        <br />
+        <button onClick={this.handleSubmit}>Create List</button>
+        <h1>My "To Do" List:</h1>
+        <ul>{items}</ul>
       </div>
     );
   }
