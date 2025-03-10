@@ -1,4 +1,4 @@
-
+//Use const for Action Types
 
 const defaultState = {
   authenticated: false
