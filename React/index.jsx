@@ -1,18 +1,24 @@
-const immutableReducer = (state = ['Do not mutate state!'], action) => {
+const defaultState = {
+  user: 'CamperBot',
+  status: 'offline',
+  friends: '732,982',
+  community: 'freeCodeCamp'
+};
+
+const immutableReducer = (state = defaultState, action) => {
   switch(action.type) {
-    case 'ADD_TO_DO':
+    case 'ONLINE':
       // Don't mutate state here or the tests will fail
-      return
+      return Object.assign({}, state,{status: 'online'})
     default:
       return state;
   }
 };
 
-const addToDo = (todo) => {
+const wakeUp = () => {
   return {
-    type: 'ADD_TO_DO',
-    todo
+    type: 'ONLINE'
   }
-}
+};
 
 const store = Redux.createStore(immutableReducer);
