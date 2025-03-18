@@ -1,32 +1,23 @@
+// Define action type
+const ADD = "ADD";
+
+// Action Creator
 const addMessage = (message) => {
-    return {
-      type: 'ADD',
-      message: message
-    }
+  return {
+    type: ADD,
+    message,
   };
-  
-  const mapStateToProps = (state) => {
-    return {
-      messages: state
-    }
-  };
-  
-  const mapDispatchToProps = (dispatch) => {
-    return {
-      submitNewMessage: (message) => {
-        dispatch(addMessage(message));
-      }
-    }
-  };
-  
-  class Presentational extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-    render() {
-      return <h3>This is a Presentational Component</h3>
-    }
-  };
-  
-  const connect = ReactRedux.connect;
-  // Change code below this line
+};
+
+// Reducer Function
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [...state, action.message]; // Append new message to state
+    default:
+      return state; // Return current state for unrecognized actions
+  }
+};
+
+// Create Redux Store
+const store = Redux.createStore(messageReducer);
