@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multimedia Player</title>
+</head>
+<body>
+  <h1>Multimedia Player</h1>
+
+  <!-- Section 1: Audio -->
+  <section>
+    <h2>Sailing Away</h2>
+    <audio controls aria-label="Audio track of Sailing Away by The Sound Travelers">
+      <source 
+        src="https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3" 
+        type="audio/mpeg" 
+      />
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <!-- Section 2: Video -->
+  <section>
+    <h2>Understanding the Map Method</h2>
+    <video 
+      controls 
+      width="600" 
+      aria-label="Educational video explaining the JavaScript map method"
+    >
+      <source 
+        src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4" 
+        type="video/mp4" 
+      />
+      <track 
+        src="https://cdn.freecodecamp.org/curriculum/labs/sample-subtitles-en.vtt" 
+        kind="subtitles" 
+        srclang="en" 
+        label="English" 
+      />
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Section 3: Transcript -->
+  <section>
+    <h2>Transcript</h2>
+    <p>
+      In this tutorial, we explore how the JavaScript <code>map()</code> method 
+      allows you to transform elements in an array efficiently. 
+      The instructor walks through practical examples of using map() to create 
+      new arrays based on existing data.
+    </p>
+  </section>
+</body>
+</html>
