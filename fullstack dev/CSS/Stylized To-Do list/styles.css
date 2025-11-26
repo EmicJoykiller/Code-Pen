@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+}
+
+section{
+    padding: 5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    background-color: rgb(240, 248, 228);
+    border-radius: 10px;
+    
+}
+
+ul{
+    list-style: none;
+    
+}
+
+li{
+    padding: 0rem 4rem;
+}
+
+a {
+    margin-left: 2rem;
+    text-decoration: none;
+}
+
+.sub-item-link {
+    text-decoration: none; /* no underline */
+}
+
+/* hover */
+.sub-item-link:hover {
+    color: blue;
+}
+
+/* active (clicked) */
+.sub-item-link:active {
+    color: red;
+}
+
+/* visited */
+.sub-item-link:visited {
+    color: purple;
+}
+
+/* focus outline */
+.sub-item-link:focus {
+    outline: 2px solid black;
+}
